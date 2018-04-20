@@ -181,11 +181,18 @@ static pthread_mutex_t phread_;
     NSURLRequest *request = object[@"request"];
     void(^success)(id) = object[@"success"];
     void(^failure)(NSError *) = object[@"failure"];
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
     [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse * _Nullable response, NSData * _Nullable data, NSError * _Nullable connectionError) {
+#pragma clang diagnostic pop
         
         dispatch_async(dispatch_get_main_queue(), ^{
             
             NSString *string = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+#if DEBUG
+            NSLog(@"\n\n urlString : %@ \n%@\n\n", request.URL, string);
+#endif
+
             if (connectionError || !response)
             {
                 if (failure) {
