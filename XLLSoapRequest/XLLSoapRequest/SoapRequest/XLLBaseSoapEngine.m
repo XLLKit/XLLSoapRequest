@@ -15,23 +15,25 @@
 #define defaultSOAPActionStr @"http://xiaolele.org/IAppWebService2/"
 
 @implementation XLLBaseSoapEngine
-static pthread_mutex_t phread_;
+static pthread_mutex_t pthread_;
+static BOOL isInitPthread_;
 
 #pragma mark - 静态变量初始化
+/**
 + (void)initialize
 {
     pthread_mutex_init(&phread_, NULL);
 }
-/**
-- (pthread_mutex_t)phread_
-{
-    if (phread_ == nil)
-    {
-        pthread_mutex_init(&phread_, NULL);
-    }
-    return phread_;
-}
  */
++ (pthread_mutex_t)pthread_
+{
+    if (isInitPthread_ == NO)
+    {
+        isInitPthread_ = YES;
+        pthread_mutex_init(&pthread_, NULL);
+    }
+    return pthread_;
+}
 
 /**
  请求体拼接基本方法
@@ -164,15 +166,16 @@ static pthread_mutex_t phread_;
     [request addValue:[NSString stringWithFormat:@"%@%@", defaultSOAPActionStr, methodName] forHTTPHeaderField:@"SOAPAction"];
     [request setHTTPMethod:@"POST"];
     [request setHTTPBody: [soapMessage dataUsingEncoding:NSUTF8StringEncoding]];
-    pthread_mutex_lock(&phread_);
     
+    pthread_mutex_t pthread = [self pthread_];
+    pthread_mutex_lock(&pthread);
     NSDictionary *object = @{
                              @"request":request,
                              @"success":success,
                              @"failure":failure
                              };
     [self performSelector:@selector(startRequest:) onThread:[self networkRequestThread] withObject:object waitUntilDone:NO modes:[[NSSet setWithObject:NSRunLoopCommonModes] allObjects]];
-    pthread_mutex_unlock(&phread_);
+    pthread_mutex_unlock(&pthread);
 }
 
 // 开始请求
