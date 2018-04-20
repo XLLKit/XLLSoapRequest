@@ -7,13 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A91EBE8F2089910800DF4E17 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A91EBE8E2089910800DF4E17 /* AppDelegate.m */; };
 		A91EBE922089910800DF4E17 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A91EBE912089910800DF4E17 /* ViewController.m */; };
 		A91EBE952089910800DF4E17 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A91EBE932089910800DF4E17 /* Main.storyboard */; };
 		A91EBE972089910800DF4E17 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A91EBE962089910800DF4E17 /* Assets.xcassets */; };
 		A91EBE9A2089910800DF4E17 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A91EBE982089910800DF4E17 /* LaunchScreen.storyboard */; };
 		A91EBE9D2089910800DF4E17 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A91EBE9C2089910800DF4E17 /* main.m */; };
 		A91EBEA72089910900DF4E17 /* XLLSoapRequestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A91EBEA62089910900DF4E17 /* XLLSoapRequestTests.m */; };
+		A91EBEB62089918500DF4E17 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A91EBEB52089918500DF4E17 /* AppDelegate.m */; };
+		A91EBEB92089927300DF4E17 /* XLLBaseSoapEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = A91EBEB82089927300DF4E17 /* XLLBaseSoapEngine.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,8 +29,6 @@
 
 /* Begin PBXFileReference section */
 		A91EBE8A2089910800DF4E17 /* XLLSoapRequest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XLLSoapRequest.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		A91EBE8D2089910800DF4E17 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		A91EBE8E2089910800DF4E17 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		A91EBE902089910800DF4E17 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		A91EBE912089910800DF4E17 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		A91EBE942089910800DF4E17 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -40,6 +39,10 @@
 		A91EBEA22089910900DF4E17 /* XLLSoapRequestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = XLLSoapRequestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A91EBEA62089910900DF4E17 /* XLLSoapRequestTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XLLSoapRequestTests.m; sourceTree = "<group>"; };
 		A91EBEA82089910900DF4E17 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A91EBEB42089918500DF4E17 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		A91EBEB52089918500DF4E17 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		A91EBEB72089927300DF4E17 /* XLLBaseSoapEngine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XLLBaseSoapEngine.h; sourceTree = "<group>"; };
+		A91EBEB82089927300DF4E17 /* XLLBaseSoapEngine.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XLLBaseSoapEngine.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,15 +84,11 @@
 		A91EBE8C2089910800DF4E17 /* XLLSoapRequest */ = {
 			isa = PBXGroup;
 			children = (
-				A91EBE8D2089910800DF4E17 /* AppDelegate.h */,
-				A91EBE8E2089910800DF4E17 /* AppDelegate.m */,
+				A91EBEB12089915800DF4E17 /* SoapRequest */,
+				A91EBEB32089918500DF4E17 /* AppDelegate */,
+				A91EBEB22089915D00DF4E17 /* SupportingFiles */,
 				A91EBE902089910800DF4E17 /* ViewController.h */,
 				A91EBE912089910800DF4E17 /* ViewController.m */,
-				A91EBE932089910800DF4E17 /* Main.storyboard */,
-				A91EBE962089910800DF4E17 /* Assets.xcassets */,
-				A91EBE982089910800DF4E17 /* LaunchScreen.storyboard */,
-				A91EBE9B2089910800DF4E17 /* Info.plist */,
-				A91EBE9C2089910800DF4E17 /* main.m */,
 			);
 			path = XLLSoapRequest;
 			sourceTree = "<group>";
@@ -101,6 +100,36 @@
 				A91EBEA82089910900DF4E17 /* Info.plist */,
 			);
 			path = XLLSoapRequestTests;
+			sourceTree = "<group>";
+		};
+		A91EBEB12089915800DF4E17 /* SoapRequest */ = {
+			isa = PBXGroup;
+			children = (
+				A91EBEB72089927300DF4E17 /* XLLBaseSoapEngine.h */,
+				A91EBEB82089927300DF4E17 /* XLLBaseSoapEngine.m */,
+			);
+			path = SoapRequest;
+			sourceTree = "<group>";
+		};
+		A91EBEB22089915D00DF4E17 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				A91EBE932089910800DF4E17 /* Main.storyboard */,
+				A91EBE962089910800DF4E17 /* Assets.xcassets */,
+				A91EBE982089910800DF4E17 /* LaunchScreen.storyboard */,
+				A91EBE9B2089910800DF4E17 /* Info.plist */,
+				A91EBE9C2089910800DF4E17 /* main.m */,
+			);
+			name = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		A91EBEB32089918500DF4E17 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				A91EBEB42089918500DF4E17 /* AppDelegate.h */,
+				A91EBEB52089918500DF4E17 /* AppDelegate.m */,
+			);
+			path = AppDelegate;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -205,9 +234,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A91EBEB62089918500DF4E17 /* AppDelegate.m in Sources */,
 				A91EBE922089910800DF4E17 /* ViewController.m in Sources */,
+				A91EBEB92089927300DF4E17 /* XLLBaseSoapEngine.m in Sources */,
 				A91EBE9D2089910800DF4E17 /* main.m in Sources */,
-				A91EBE8F2089910800DF4E17 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
