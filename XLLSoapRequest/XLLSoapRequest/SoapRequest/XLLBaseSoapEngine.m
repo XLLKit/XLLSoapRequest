@@ -35,6 +35,7 @@ static BOOL isInitPthread_;
     return pthread_;
 }
 
+
 /**
  请求体拼接基本方法
  其中的%@即存放参数元素的位置。这里要根据后台文档的要求进行书写
